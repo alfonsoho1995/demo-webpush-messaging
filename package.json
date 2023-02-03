@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/alfonsoho1995/demo-webpush-messaging",
   "dependencies": {
+    "firebase": "^7.24.0",
     "gh-pages": "^5.0.0"
   }
 }

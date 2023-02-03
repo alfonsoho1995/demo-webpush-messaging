@@ -1,25 +1,11 @@
 // Import and configure the Firebase SDK
 // These scripts are made available when the app is served or deployed on Firebase Hosting
 // If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup
-// importScripts('/__/firebase/9.2.0/firebase-app-compat.js');
-// importScripts('/__/firebase/9.2.0/firebase-messaging-compat.js');
-// importScripts('/__/firebase/init.js');
 
-importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js');
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDYvSThCzy9gj9XrV3gBicG-fN6d7iTx6g",
-  authDomain: "ematic-tw-es.firebaseapp.com",
-  databaseURL: "https://ematic-tw-es.firebaseio.com",
-  projectId: "ematic-tw-es",
-  storageBucket: "ematic-tw-es.appspot.com",
-  messagingSenderId: "445285238792",
-  appId: "1:445285238792:web:af90c12736aa930f19e9bd",
-  measurementId: "G-P95MWTGDJY"
-};
-
-const messaging = getMessaging(firebaseApp);
+const messaging = firebase.messaging();
 
 /**
  * Here is is the code snippet to initialize Firebase Messaging in the Service
@@ -64,7 +50,7 @@ messaging.onBackgroundMessage(function(payload) {
   const notificationTitle = 'Background Message Title';
   const notificationOptions = {
     body: 'Background Message body.',
-    // icon: '/firebase-logo.png'
+    icon: '/firebase-logo.png'
   };
 
   self.registration.showNotification(notificationTitle,
